@@ -3,445 +3,551 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="藍天咖啡，為手沖咖啡愛好者挑選當季精品咖啡豆，讓每一杯都清澈、明亮、值得細品。">
-  <title>藍天咖啡｜讓風味，慢慢抵達</title>
+  <meta name="description" content="黑天咖啡專為腳沖咖啡喜好者打造，主打親民、耐萃、濃郁的低階咖啡豆，以純黑美學打破精品豆昂貴迷思。">
+  <meta name="theme-color" content="#090a0d">
+  <link rel="canonical" href="https://AA250013.github.io/WebPage_11525236/onepage3">
+  <meta property="og:url" content="https://AA250013.github.io/WebPage_11525236/onepage3">
+  <title>黑天咖啡 DARK SKY COFFEE｜腳沖咖啡喜好者的新選擇</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy: #062742;
-      --blue: #0c5b95;
-      --sky: #75c6e8;
-      --mist: #eaf5f7;
-      --cream: #fbfaf6;
-      --ink: #122534;
-      --muted: #607482;
-      --line: #d7e4e8;
-      --sand: #e5b66b;
-      --shadow: 0 18px 50px rgba(6, 39, 66, .13);
+      color-scheme: dark;
+      --bg-black: #090a0d;
+      --bg-card: #13161c;
+      --bg-card-hover: #1a1e27;
+      --border-dark: #292d35;
+      --amber: #ffb830;
+      --amber-hover: #e09f20;
+      --text-white: #f8fafc;
+      --text-gray: #a7abb4;
+      --text-dim: #777e8a;
+      --success: #65cf9a;
+      --danger: #f27878;
+      --shadow-dark: 0 16px 36px rgba(0, 0, 0, .6);
+      --shadow-amber: 0 8px 24px rgba(255, 184, 48, .2);
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--cream);
-      font: 16px/1.7 "Noto Sans TC", sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--text-white); background: var(--bg-black); font: 15px/1.75 "Noto Sans TC", sans-serif; -webkit-font-smoothing: antialiased; }
+    body.drawer-open { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
     button, input { font: inherit; }
-    button { cursor: pointer; }
-    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 0 0 18px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-    }
-    .eyebrow::before { width: 28px; height: 1px; background: currentColor; content: ""; }
-    .section-title {
-      margin: 0;
-      font: 800 clamp(30px, 4vw, 46px)/1.28 "Noto Serif TC", serif;
-      letter-spacing: .045em;
-    }
-    .text-blue { color: var(--blue); }
-    .button, .outline-link {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 23px;
-      border: 1px solid transparent;
-      border-radius: 2px;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      transition: transform .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
-    }
-    .button:hover, .outline-link:hover { transform: translateY(-2px); }
-    .button--sand { color: var(--navy); background: var(--sand); }
-    .button--sand:hover { background: #f1cb8b; }
-    .button--dark { color: var(--navy); background: #fff; }
-    .outline-link { border-color: rgba(255,255,255,.72); color: #fff; }
-    .outline-link:hover { color: var(--navy); background: #fff; }
-    :focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; }
-
-    /* Header & hero */
-    .site-header { position: absolute; z-index: 20; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgba(255,255,255,.28); }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; color: #fff; }
-    .brand-mark { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--sky); border-radius: 50%; color: var(--sky); font: 700 16px/1 "Playfair Display", serif; }
-    .brand-copy { display: grid; line-height: 1.05; }
-    .brand-copy strong { font-size: 13px; letter-spacing: .08em; }
-    .brand-copy small { margin-top: 4px; font-size: 8px; letter-spacing: .18em; opacity: .7; }
-    .nav-links { display: flex; align-items: center; gap: clamp(16px, 2.4vw, 31px); }
-    .nav-links a { position: relative; color: #fff; font-size: 13px; font-weight: 500; white-space: nowrap; }
-    .nav-links a:not(.nav-cta)::after { position: absolute; right: 0; bottom: -5px; left: auto; width: 0; height: 1px; background: var(--sky); content: ""; transition: width .25s ease; }
-    .nav-links a:not(.nav-cta):hover::after { right: auto; left: 0; width: 100%; }
-    .nav-links .nav-cta { padding: 8px 13px; border: 1px solid rgba(255,255,255,.72); }
-    .nav-links .nav-cta:hover { color: var(--navy); background: #fff; }
-    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.7); color: #fff; background: transparent; font-size: 23px; line-height: 1; }
-
-    .hero { position: relative; min-height: 704px; overflow: hidden; color: #fff; background: var(--navy); isolation: isolate; }
-    .hero::before { position: absolute; z-index: -2; top: -320px; right: -210px; width: 810px; height: 810px; border-radius: 50%; background: radial-gradient(circle, rgba(117,198,232,.38), rgba(12,91,149,.18) 38%, transparent 69%); content: ""; }
-    .hero::after { position: absolute; z-index: -1; right: 12%; bottom: -430px; width: 780px; height: 780px; border: 1px solid rgba(117,198,232,.18); border-radius: 50%; box-shadow: 0 0 0 65px rgba(117,198,232,.035), 0 0 0 154px rgba(117,198,232,.025); content: ""; }
-    .hero-grid { min-height: 704px; display: grid; grid-template-columns: 1.02fr .98fr; gap: 45px; align-items: center; padding: 122px 0 72px; }
-    .hero-copy { position: relative; z-index: 2; }
-    .hero .eyebrow { color: var(--sky); }
-    .hero h1 { max-width: 650px; margin: 0 0 23px; font: 800 clamp(42px, 5.5vw, 68px)/1.22 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .hero h1 span { color: var(--sky); }
-    .hero-lede { max-width: 500px; margin: 0; color: rgba(255,255,255,.79); font-size: 16px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
-    .hero-note { margin: 31px 0 0; color: rgba(255,255,255,.55); font: 600 11px/1.5 "Playfair Display", serif; letter-spacing: .16em; }
-    .scroll-cue { position: absolute; bottom: 35px; left: 0; display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.63); font-size: 10px; font-weight: 600; letter-spacing: .18em; }
-    .scroll-cue::before { width: 38px; height: 1px; background: var(--sky); content: ""; }
-
-    .hero-art { position: relative; align-self: stretch; min-height: 470px; overflow: hidden; }
-    .hero-art .sun { position: absolute; top: 52px; right: 54px; width: clamp(138px, 18vw, 200px); aspect-ratio: 1; border-radius: 50%; background: #b9e8f5; box-shadow: 0 0 0 27px rgba(117,198,232,.09), 0 0 0 59px rgba(117,198,232,.045); }
-    .mountain { position: absolute; right: -11%; bottom: 6px; width: 116%; height: 260px; transform: skewY(-9deg); transform-origin: right bottom; background: linear-gradient(146deg, transparent 0 27%, rgba(61,145,184,.36) 27.3% 48%, rgba(17,97,143,.77) 48.3%); clip-path: polygon(0 62%, 28% 20%, 44% 57%, 68% 4%, 100% 57%, 100% 100%, 0 100%); }
-    .mountain--back { right: 13%; bottom: 98px; width: 108%; height: 220px; opacity: .46; transform: skewY(-4deg); background: #2a81ae; clip-path: polygon(0 84%, 31% 30%, 45% 62%, 66% 9%, 100% 66%, 100% 100%, 0 100%); }
-    .horizon { position: absolute; right: -4%; bottom: 0; width: 116%; height: 112px; background: linear-gradient(90deg, rgba(7,45,75,.5), #0d5684); transform: skewY(-4deg); }
-    .coffee-vessel { position: absolute; z-index: 4; right: 18%; bottom: 36px; width: 192px; height: 274px; filter: drop-shadow(18px 22px 14px rgba(0,0,0,.22)); }
-    .vessel-neck { position: absolute; top: 0; left: 62px; width: 68px; height: 42px; border: 7px solid #b3e2ef; border-bottom: 0; border-radius: 50% 50% 0 0; background: rgba(6,39,66,.62); }
-    .vessel-body { position: absolute; top: 33px; left: 18px; width: 150px; height: 212px; border: 7px solid #b3e2ef; border-radius: 31% 31% 42% 42% / 12% 12% 37% 37%; background: linear-gradient(90deg, rgba(30,112,151,.9), rgba(5,35,60,.9) 45%, rgba(83,167,198,.8)); overflow: hidden; }
-    .vessel-body::before { position: absolute; top: 15px; left: 0; width: 100%; height: 5px; background: rgba(197,237,244,.8); box-shadow: 0 48px rgba(197,237,244,.25), 0 95px rgba(197,237,244,.18), 0 145px rgba(197,237,244,.13); content: ""; }
-    .vessel-body::after { position: absolute; top: 5px; left: 48%; width: 24px; height: 200px; border-radius: 50%; background: rgba(218,247,251,.17); content: ""; }
-    .vessel-handle { position: absolute; right: 0; bottom: 49px; width: 62px; height: 98px; border: 10px solid #a9dce9; border-left: 0; border-radius: 0 53px 53px 0; }
-    .art-label { position: absolute; z-index: 5; right: 0; bottom: 64px; display: grid; gap: 3px; color: rgba(255,255,255,.73); font-size: 11px; letter-spacing: .1em; text-align: right; }
-    .art-label strong { color: var(--sky); font: 700 22px/1 "Playfair Display", serif; }
-
-    /* Story */
-    .story { padding: 118px 0; background: #fff; }
-    .story-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(45px, 8vw, 105px); align-items: center; }
-    .story-visual { position: relative; min-height: 416px; }
-    .seal { position: absolute; top: 0; left: 0; width: 310px; height: 310px; display: grid; place-items: center; border: 1px solid #a8d2df; border-radius: 50%; color: var(--blue); background: radial-gradient(circle at 35% 30%, #fff 0, #eaf6f8 68%, #d9edf1 100%); }
-    .seal::before, .seal::after { position: absolute; border: 1px solid rgba(12,91,149,.25); border-radius: 50%; content: ""; }
-    .seal::before { inset: 17px; }
-    .seal::after { inset: 44px; border-style: dashed; }
-    .seal-inner { position: relative; z-index: 1; display: grid; gap: 7px; text-align: center; }
-    .seal-inner b { font: 700 42px/1 "Playfair Display", serif; }
-    .seal-inner span { font-size: 13px; font-weight: 700; letter-spacing: .1em; }
-    .seal-inner small { font: 600 9px/1.5 "Playfair Display", serif; letter-spacing: .15em; }
-    .blue-note { position: absolute; right: 0; bottom: 0; width: 235px; padding: 27px 28px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .blue-note .eyebrow { margin-bottom: 9px; color: var(--sky); font-size: 9px; }
-    .blue-note p { margin: 0; font: 700 20px/1.55 "Noto Serif TC", serif; letter-spacing: .05em; }
-    .story-copy p { margin: 19px 0 0; color: var(--muted); }
-    .inline-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid var(--blue); color: var(--blue); font-weight: 700; }
-    .inline-link:hover { color: var(--navy); }
-
-    /* Coffee collection */
-    .coffee { padding: 111px 0 120px; background: var(--mist); }
-    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 39px; }
-    .section-heading p { max-width: 370px; margin: 0; color: var(--muted); }
-    .coffee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 19px; }
-    .coffee-card { position: relative; min-height: 384px; display: flex; flex-direction: column; overflow: hidden; padding: 30px; color: #fff; background: var(--navy); box-shadow: var(--shadow); }
-    .coffee-card:nth-child(2) { background: #106396; }
-    .coffee-card:nth-child(3) { background: #164c68; }
-    .coffee-card::after { position: absolute; right: -90px; bottom: -90px; width: 260px; height: 260px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%; box-shadow: 0 0 0 27px rgba(255,255,255,.045), 0 0 0 65px rgba(255,255,255,.025); content: ""; }
-    .card-top, .coffee-card h3, .flavour, .card-footer { position: relative; z-index: 1; }
-    .card-top { color: var(--sky); font: 700 12px/1.3 "Playfair Display", serif; letter-spacing: .12em; }
-    .origin { margin: 25px 0 8px; color: rgba(255,255,255,.69); font-size: 10px; font-weight: 700; letter-spacing: .15em; }
-    .coffee-card h3 { margin: 0; font: 700 26px/1.38 "Noto Serif TC", serif; letter-spacing: .04em; }
-    .flavour { margin: 15px 0 0; color: rgba(255,255,255,.73); font-size: 14px; }
-    .card-footer { display: flex; align-items: end; justify-content: space-between; gap: 14px; margin-top: auto; }
-    .price { font: 700 15px/1.3 "Playfair Display", serif; letter-spacing: .04em; }
-    .save-coffee { padding: 0 0 5px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); color: #fff; background: transparent; font-size: 13px; font-weight: 700; white-space: nowrap; transition: color .2s, border-color .2s; }
-    .save-coffee:hover { border-color: var(--sand); color: var(--sand); }
-
-    /* Brew */
-    .brew { padding: 118px 0; background: #fff; }
-    .brew-grid { display: grid; grid-template-columns: .93fr 1.07fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
-    .brew-art { position: relative; height: 414px; overflow: hidden; background: linear-gradient(136deg, #e3f4f7 0 48%, #f8fcfc 48% 100%); }
-    .brew-art::before { position: absolute; top: 37px; left: 35px; width: 68px; height: 41px; border-top: 1px solid #6cb4ce; border-bottom: 1px solid #6cb4ce; content: ""; }
-    .brew-art::after { position: absolute; top: 57px; left: 35px; width: 43px; border-top: 1px solid #6cb4ce; content: ""; }
-    .water-rings { position: absolute; top: 67px; left: 50%; width: 245px; height: 245px; border: 1px solid rgba(12,91,149,.27); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 0 30px rgba(117,198,232,.12), 0 0 0 74px rgba(117,198,232,.065); }
-    .water-rings::before { position: absolute; top: 18px; left: 50%; width: 1px; height: 58px; background: #6bb8d1; content: ""; transform: translateX(-50%); }
-    .dripper { position: absolute; z-index: 2; top: 134px; left: 50%; width: 147px; height: 151px; border: 7px solid var(--blue); border-top: 0; background: linear-gradient(130deg, rgba(255,255,255,.85), rgba(117,198,232,.25)); clip-path: polygon(0 0, 100% 0, 74% 100%, 26% 100%); transform: translateX(-50%); }
-    .dripper::after { position: absolute; right: 32px; bottom: 19px; left: 32px; height: 33px; border-top: 2px solid rgba(12,91,149,.55); border-bottom: 2px solid rgba(12,91,149,.35); content: ""; }
-    .carafe { position: absolute; z-index: 1; bottom: 56px; left: 50%; width: 139px; height: 106px; border: 6px solid var(--blue); border-radius: 16px 16px 45% 45%; background: rgba(117,198,232,.23); transform: translateX(-50%); }
-    .carafe::before { position: absolute; top: -28px; left: 29px; width: 70px; height: 28px; border: 6px solid var(--blue); border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
-    .brew-caption { position: absolute; right: 24px; bottom: 19px; color: var(--blue); text-align: right; }
-    .brew-caption span { display: block; font: 700 11px/1.5 "Playfair Display", serif; letter-spacing: .12em; }
-    .brew-caption strong { font: 700 24px/1.1 "Playfair Display", serif; }
-    .brew-copy > p { margin: 18px 0 25px; color: var(--muted); }
-    .brew-steps { border-top: 1px solid var(--line); }
-    .brew-step { display: grid; grid-template-columns: 52px 1fr; gap: 15px; padding: 18px 0; border-bottom: 1px solid var(--line); }
-    .step-number { color: var(--blue); font: 700 24px/1 "Playfair Display", serif; }
-    .brew-step h3 { margin: 0; font: 700 16px/1.5 "Noto Serif TC", serif; }
-    .brew-step p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
-
-    /* Subscribe and footer */
-    .visit { position: relative; overflow: hidden; padding: 108px 0 113px; color: #fff; text-align: center; background: var(--navy); }
-    .visit::before, .visit::after { position: absolute; width: 390px; height: 390px; border: 1px solid rgba(117,198,232,.17); border-radius: 50%; content: ""; }
-    .visit::before { top: -245px; left: -153px; box-shadow: 0 0 0 45px rgba(117,198,232,.035); }
-    .visit::after { right: -170px; bottom: -260px; box-shadow: 0 0 0 50px rgba(117,198,232,.035); }
-    .visit .wrap { position: relative; z-index: 1; max-width: 715px; }
-    .visit .eyebrow { justify-content: center; color: var(--sky); }
-    .visit h2 { margin: 0; font: 800 clamp(30px, 4vw, 46px)/1.3 "Noto Serif TC", serif; letter-spacing: .045em; }
-    .visit p { max-width: 510px; margin: 19px auto 29px; color: rgba(255,255,255,.72); }
-    .subscribe-form { display: flex; min-height: 58px; border: 1px solid rgba(255,255,255,.62); }
-    .subscribe-form input { min-width: 0; flex: 1; padding: 0 18px; border: 0; color: #fff; outline: none; background: transparent; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,.56); }
-    .subscribe-form button { padding: 0 23px; border: 0; color: var(--navy); background: var(--sand); font-size: 14px; font-weight: 700; white-space: nowrap; transition: background .2s; }
-    .subscribe-form button:hover { background: #f1cb8b; }
-    .site-footer { padding: 66px 0 23px; color: rgba(255,255,255,.68); background: #031c31; }
-    .footer-grid { display: grid; grid-template-columns: 1.45fr .8fr 1fr; gap: 55px; padding-bottom: 48px; }
-    .footer-brand .brand { margin-bottom: 16px; }
-    .footer-brand p { max-width: 330px; margin: 0; font-size: 14px; }
-    .footer-title { margin: 0 0 14px; color: var(--sky); font-size: 11px; font-weight: 700; letter-spacing: .18em; }
-    .footer-links { display: grid; gap: 8px; font-size: 14px; }
-    .footer-links a:hover { color: var(--sky); }
+    button { color: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    .promo { min-height: 36px; display: flex; justify-content: center; align-items: center; gap: 10px; padding: 5px 16px; color: #d3d4d7; background: #101115; font-size: 11px; text-align: center; }
+    .promo-badge { padding: 1px 7px; color: var(--amber); background: #050608; border: 1px solid #4d3b1c; border-radius: 4px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+    .site-header { position: sticky; z-index: 20; top: 0; border-bottom: 1px solid rgba(255,255,255,.07); background: rgba(9,10,13,.88); backdrop-filter: blur(12px); }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; }
+    .brand-mark { width: 36px; aspect-ratio: 1; display: grid; place-items: center; border: 1px solid var(--amber); color: var(--amber); font: 700 20px/1 "Noto Serif TC", serif; }
+    .brand-copy { display: grid; line-height: 1.15; }
+    .brand-copy strong { font: 700 15px/1.2 "Noto Serif TC", serif; letter-spacing: .08em; }
+    .brand-copy small { margin-top: 4px; color: var(--text-dim); font: 600 8px/1 "Playfair Display", serif; letter-spacing: .16em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 29px); }
+    .nav-links a { color: #c3c4c8; font-size: 12px; white-space: nowrap; transition: color .2s; }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .cart-trigger { position: relative; min-height: 40px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--border-dark); background: transparent; font-size: 12px; white-space: nowrap; }
+    .cart-trigger:hover { border-color: var(--amber); }
+    .cart-trigger svg { width: 17px; height: 17px; }
+    .cart-count { min-width: 18px; height: 18px; display: grid; place-items: center; padding-inline: 4px; border-radius: 10px; color: #17120a; background: var(--amber); font-size: 10px; font-weight: 700; }
+    .menu-toggle { width: 40px; height: 40px; display: none; place-items: center; border: 1px solid var(--border-dark); background: transparent; }
+    .menu-toggle svg { width: 19px; height: 19px; }
+    .hero { position: relative; overflow: hidden; isolation: isolate; border-bottom: 1px solid var(--border-dark); background: radial-gradient(ellipse at 83% 30%, rgba(116,76,23,.18), transparent 35%), linear-gradient(112deg, #0b0c0f 0%, #111216 55%, #090a0d 100%); }
+    .hero::after { position: absolute; z-index: -1; right: -200px; bottom: -450px; width: 820px; aspect-ratio: 1; border: 1px solid rgba(255,184,48,.09); border-radius: 50%; box-shadow: 0 0 0 65px rgba(255,184,48,.025), 0 0 0 145px rgba(255,184,48,.018); content: ""; }
+    .hero-grid { min-height: 615px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 36px; align-items: center; padding-block: 75px 82px; }
+    .eyebrow { margin: 0 0 16px; color: var(--amber); font: 700 10px/1.5 "Playfair Display", "Noto Sans TC", serif; letter-spacing: .18em; }
+    .hero h1 { max-width: 690px; margin: 0; font: 800 clamp(42px, 5.2vw, 66px)/1.3 "Noto Serif TC", serif; }
+    .hero h1 span { color: var(--amber); }
+    .hero-lede { max-width: 545px; margin: 22px 0 0; color: var(--text-gray); font-size: 15px; }
+    .hero-checks { display: grid; grid-template-columns: repeat(3, max-content); gap: 9px 20px; margin: 25px 0 0; padding: 0; list-style: none; color: #d5d5d8; font-size: 11px; }
+    .hero-checks li::before { margin-right: 7px; color: var(--amber); content: "✓"; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 29px; }
+    .button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 10px 19px; border: 1px solid transparent; border-radius: 2px; font-size: 13px; font-weight: 700; transition: transform .2s, background .2s, border-color .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button--amber { color: #1c160b; background: var(--amber); box-shadow: var(--shadow-amber); }
+    .button--amber:hover { background: #ffca65; }
+    .button--outline { border-color: #55545a; color: var(--text-white); background: transparent; }
+    .button--outline:hover { border-color: var(--amber); color: var(--amber); }
+    .hero-art { position: relative; min-height: 435px; display: grid; place-items: center; }
+    .roast-disc { position: absolute; top: 21px; right: 33px; width: 260px; aspect-ratio: 1; border: 1px solid rgba(255,184,48,.2); border-radius: 50%; background: radial-gradient(circle at 43% 42%, #25201a 0 15%, #171511 16% 38%, #100f0d 39% 57%, transparent 58%); box-shadow: 0 0 0 22px rgba(255,184,48,.025), inset 0 0 45px rgba(255,184,48,.08); }
+    .roast-disc::before, .roast-disc::after { position: absolute; top: 50%; left: 50%; width: 1px; height: 110%; background: rgba(255,184,48,.09); content: ""; transform: translate(-50%,-50%) rotate(42deg); }
+    .roast-disc::after { transform: translate(-50%,-50%) rotate(-42deg); }
+    .coffee-cup { position: relative; z-index: 2; width: 210px; height: 154px; margin-top: 100px; border: 1px solid #65543a; border-radius: 12px 12px 42% 42% / 10px 10px 30% 30%; background: linear-gradient(110deg, #28231b 0%, #111214 34%, #252019 68%, #101113 100%); box-shadow: 0 34px 34px rgba(0,0,0,.62), inset 10px 3px 14px rgba(255,255,255,.035); }
+    .coffee-cup::before { position: absolute; top: -9px; left: -1px; width: 100%; height: 19px; border: 1px solid #7e6335; border-radius: 50%; background: radial-gradient(ellipse, #1d100b 0 46%, #5d4423 49% 53%, #141314 57%); content: ""; }
+    .coffee-cup::after { position: absolute; top: 25px; right: -51px; width: 56px; height: 66px; border: 10px solid #6e593a; border-left: 0; border-radius: 0 40px 40px 0; content: ""; }
+    .cup-shadow { position: absolute; bottom: 57px; width: 295px; height: 25px; border-radius: 50%; background: rgba(0,0,0,.65); filter: blur(8px); }
+    .art-label { position: absolute; z-index: 3; top: 9px; left: 8px; display: grid; gap: 5px; }
+    .art-label strong { color: var(--amber); font: 700 11px/1.4 "Playfair Display", serif; letter-spacing: .17em; }
+    .art-label span { color: var(--text-dim); font-size: 10px; }
+    .art-stamp { position: absolute; right: 4px; bottom: 35px; display: grid; gap: 3px; color: var(--text-gray); font-size: 10px; text-align: right; }
+    .art-stamp b { color: var(--amber); font: 700 20px/1.2 "Playfair Display", serif; }
+    .spec-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border-dark); background: rgba(8,9,11,.62); }
+    .spec-item { min-height: 82px; display: grid; align-content: center; gap: 3px; padding: 12px 17px; border-right: 1px solid var(--border-dark); }
+    .spec-item:last-child { border-right: 0; }
+    .spec-item small { color: var(--text-dim); font-size: 10px; }
+    .spec-item strong { font-size: 12px; font-weight: 600; }
+    .section { padding-block: 94px; }
+    .section-heading { max-width: 760px; margin-bottom: 37px; }
+    .section-heading h2, .section-title { margin: 0; font: 700 clamp(29px, 3.8vw, 43px)/1.4 "Noto Serif TC", serif; }
+    .section-heading > p:last-child { max-width: 590px; margin: 14px 0 0; color: var(--text-gray); }
+    .amber-text { color: var(--amber); }
+    .philosophy { background: linear-gradient(180deg, #101115, #0c0d10); }
+    .philosophy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+    .principle { min-height: 225px; padding: 25px 25px 23px; border: 1px solid var(--border-dark); background: rgba(19,22,28,.72); transition: background .2s, border-color .2s, transform .2s; }
+    .principle:hover { border-color: #574521; background: var(--bg-card-hover); transform: translateY(-3px); }
+    .principle-number { color: var(--amber); font: 700 12px/1 "Playfair Display", serif; letter-spacing: .12em; }
+    .principle h3 { margin: 24px 0 10px; font: 700 19px/1.5 "Noto Serif TC", serif; }
+    .principle p { margin: 0; color: var(--text-gray); font-size: 13px; }
+    .brew-section { background: #0a0b0e; }
+    .brew-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(42px, 8vw, 90px); align-items: center; }
+    .video-feature { max-width: 860px; margin: 52px auto 0; }
+    .video-feature h3 { margin: 0 0 16px; font: 600 21px/1.5 "Noto Serif TC", serif; }
+    .video-frame { position: relative; overflow: hidden; aspect-ratio: 16 / 9; border: 1px solid #44371f; background: #000; box-shadow: var(--shadow-dark); }
+    .video-preview { position: absolute; inset: 0; display: grid; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 50%, #3a2a14, #111); }
+    .video-preview::after { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0,0,0,.68), transparent 55%); content: ""; }
+    .video-preview img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: .76; }
+    .video-play { position: relative; z-index: 1; display: grid; justify-items: center; gap: 12px; color: #fff; font-size: 13px; font-weight: 700; text-shadow: 0 2px 8px #000; }
+    .video-play::before { width: 64px; height: 46px; display: grid; place-items: center; border-radius: 12px; color: #17120a; background: var(--amber); box-shadow: 0 6px 24px rgba(0,0,0,.4); font-size: 20px; content: "▶"; }
+    .video-preview:hover .video-play::before { background: #ffca65; }
+    .video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .brew-visual { position: relative; min-height: 390px; overflow: hidden; border: 1px solid #28251e; background: radial-gradient(ellipse at 50% 70%, rgba(105,70,25,.22), transparent 50%), linear-gradient(145deg, #181713, #0d0e11 68%); }
+    .brew-visual::before { position: absolute; top: 31px; left: 26px; color: #807158; font: 700 10px/1.4 "Playfair Display", serif; letter-spacing: .18em; content: "FOOT BREW / METHOD 01"; }
+    .brew-ring { position: absolute; top: 72px; left: 50%; width: 235px; aspect-ratio: 1; border: 1px solid rgba(255,184,48,.24); border-radius: 50%; box-shadow: 0 0 0 28px rgba(255,184,48,.035), 0 0 0 62px rgba(255,184,48,.025); transform: translateX(-50%); }
+    .brew-filter { position: absolute; z-index: 2; top: 132px; left: 50%; width: 135px; height: 122px; border: 1px solid #a87b34; background: linear-gradient(130deg, rgba(255,184,48,.15), rgba(30,25,17,.8)); clip-path: polygon(0 0,100% 0,72% 100%,28% 100%); transform: translateX(-50%); }
+    .brew-filter::after { position: absolute; right: 24px; bottom: 24px; left: 24px; height: 25px; border-top: 1px solid rgba(255,184,48,.6); border-bottom: 1px solid rgba(255,184,48,.35); content: ""; }
+    .brew-server { position: absolute; top: 257px; left: 50%; width: 120px; height: 80px; border: 1px solid #95723e; border-radius: 8px 8px 40% 40%; background: linear-gradient(100deg, rgba(55,40,22,.55), rgba(8,9,10,.5)); transform: translateX(-50%); }
+    .brew-server::before { position: absolute; top: -20px; left: 31px; width: 56px; height: 20px; border: 1px solid #95723e; border-bottom: 0; border-radius: 50% 50% 0 0; content: ""; }
+    .brew-caption { position: absolute; right: 22px; bottom: 17px; color: var(--text-dim); text-align: right; }
+    .brew-caption span { display: block; font-size: 9px; letter-spacing: .12em; }
+    .brew-caption strong { color: var(--amber); font: 700 21px/1.25 "Playfair Display", serif; }
+    .brew-copy > p:not(.eyebrow) { margin: 14px 0 25px; color: var(--text-gray); }
+    .steps { border-top: 1px solid var(--border-dark); }
+    .step { display: grid; grid-template-columns: 46px 1fr; gap: 12px; padding: 17px 0; border-bottom: 1px solid var(--border-dark); }
+    .step-number { color: var(--amber); font: 700 21px/1.3 "Playfair Display", serif; }
+    .step h3 { margin: 0; font: 600 15px/1.6 "Noto Serif TC", serif; }
+    .step p { margin: 3px 0 0; color: var(--text-gray); font-size: 12px; }
+    .quote { margin: 25px 0 0; padding: 17px 20px; border-left: 2px solid var(--amber); color: #d8d1c5; background: #121214; font: 500 14px/1.9 "Noto Serif TC", serif; }
+    .quote cite { display: block; margin-top: 8px; color: var(--text-dim); font: 11px/1.5 "Noto Sans TC", sans-serif; }
+    .products { background: #111216; }
+    .promo-code { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 0 0 25px; padding: 14px 18px; border: 1px solid #493b21; color: #ead9b7; background: linear-gradient(90deg, #211b11, #15130f); font-size: 13px; }
+    .promo-code b { color: var(--amber); font-family: "Playfair Display", serif; letter-spacing: .06em; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .product { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--border-dark); background: var(--bg-card); transition: border-color .2s, background .2s; }
+    .product:hover { border-color: #594622; background: var(--bg-card-hover); }
+    .product-art { position: relative; min-height: 190px; display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--border-dark); background: radial-gradient(ellipse at 50% 75%, rgba(255,184,48,.12), transparent 48%), linear-gradient(135deg,#191a1d,#101114); }
+    .product-art::before { position: absolute; top: 15px; right: -28px; width: 160px; height: 160px; border: 1px solid rgba(255,184,48,.11); border-radius: 50%; box-shadow: 0 0 0 21px rgba(255,184,48,.025); content: ""; }
+    .bean-bag { position: relative; width: 103px; height: 127px; display: grid; align-content: center; justify-items: center; gap: 6px; border: 1px solid #78613b; border-radius: 9px 9px 15px 15px; background: linear-gradient(100deg,#25221b,#101113 45%,#1d1b16); box-shadow: 0 17px 24px rgba(0,0,0,.45); transform: rotate(-5deg); }
+    .bean-bag::before { position: absolute; top: 10px; right: 9px; left: 9px; height: 4px; border-top: 1px solid #8e754a; border-bottom: 1px solid #4c402a; content: ""; }
+    .bean-bag span { color: var(--amber); font: 700 10px/1 "Noto Serif TC", serif; letter-spacing: .1em; }
+    .bean-bag small { color: #bbb09b; font: 600 7px/1.2 "Playfair Display", serif; letter-spacing: .12em; }
+    .product-content { flex: 1; display: flex; flex-direction: column; padding: 19px 19px 17px; }
+    .product-kicker { color: var(--amber); font: 700 9px/1.4 "Playfair Display", serif; letter-spacing: .14em; }
+    .product h3 { margin: 8px 0 4px; font: 700 18px/1.5 "Noto Serif TC", serif; }
+    .product-meta { margin: 0; color: var(--text-dim); font-size: 11px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 13px 0 18px; }
+    .tags span { padding: 3px 7px; border: 1px solid #35343a; color: #c5c0b7; font-size: 10px; }
+    .product-bottom { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-top: auto; }
+    .price { display: grid; line-height: 1.4; }
+    .price del { color: var(--text-dim); font-size: 10px; }
+    .price strong { color: var(--amber); font: 700 19px/1.4 "Playfair Display", "Noto Sans TC", serif; }
+    .add-button { min-height: 39px; padding: 7px 11px; border: 1px solid #6a542d; color: var(--amber); background: transparent; font-size: 11px; font-weight: 700; white-space: nowrap; transition: background .2s, color .2s; }
+    .add-button:hover { color: #1a1409; background: var(--amber); }
+    .bundle { padding-block: 76px; background: #090a0d; }
+    .bundle-panel { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 35px; align-items: center; overflow: hidden; padding: 38px 42px; border: 1px solid #57441f; background: radial-gradient(ellipse at 85% 50%, rgba(255,184,48,.11), transparent 40%), #141416; }
+    .bundle-panel::after { position: absolute; right: -95px; bottom: -188px; width: 345px; aspect-ratio: 1; border: 1px solid rgba(255,184,48,.12); border-radius: 50%; box-shadow: 0 0 0 32px rgba(255,184,48,.025); content: ""; }
+    .bundle-copy, .bundle-price { position: relative; z-index: 1; }
+    .bundle h2 { margin: 0; font: 700 clamp(23px,3vw,34px)/1.45 "Noto Serif TC", serif; }
+    .bundle-copy > p:not(.eyebrow) { margin: 13px 0 18px; color: var(--text-gray); font-size: 13px; }
+    .bundle-includes { display: flex; flex-wrap: wrap; gap: 8px 16px; padding: 0; margin: 0; list-style: none; color: #d0c8b9; font-size: 11px; }
+    .bundle-includes li::before { margin-right: 6px; color: var(--amber); content: "+"; }
+    .bundle-price { padding-left: 28px; border-left: 1px solid var(--border-dark); }
+    .bundle-price small { display: block; color: var(--text-gray); font-size: 11px; }
+    .bundle-price del { color: var(--text-dim); font-size: 13px; }
+    .bundle-price strong { display: block; margin: 0 0 13px; color: var(--amber); font: 700 39px/1.35 "Playfair Display", "Noto Sans TC", serif; }
+    .bundle-price .button { width: 100%; }
+    .reviews { background: #111216; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .review { min-height: 209px; padding: 23px; border-top: 2px solid #59451f; background: var(--bg-card); }
+    .stars { color: var(--amber); font-size: 12px; letter-spacing: .14em; }
+    .review blockquote { margin: 13px 0 20px; color: #dedee0; font: 500 14px/1.9 "Noto Serif TC", serif; }
+    .reviewer { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; color: var(--text-gray); font-size: 11px; }
+    .reviewer strong { color: var(--text-white); font-size: 12px; }
+    .vip { position: relative; overflow: hidden; padding-block: 77px; border-block: 1px solid #342a19; background: radial-gradient(ellipse at 12% 100%, rgba(255,184,48,.12), transparent 40%), linear-gradient(110deg,#16130e,#111114 62%,#15120d); }
+    .vip-grid { display: grid; grid-template-columns: 1fr minmax(310px,.72fr); gap: 45px; align-items: center; }
+    .vip h2 { max-width: 610px; margin: 0; font: 700 clamp(26px,3.5vw,39px)/1.45 "Noto Serif TC", serif; }
+    .vip p:not(.eyebrow) { margin: 11px 0 0; color: var(--text-gray); font-size: 13px; }
+    .subscribe-form { display: flex; min-height: 50px; border: 1px solid #5b4b2d; background: rgba(9,10,13,.65); }
+    .subscribe-form input { min-width: 0; flex: 1; padding: 0 14px; border: 0; color: var(--text-white); outline: none; background: transparent; font-size: 12px; }
+    .subscribe-form input::placeholder { color: var(--text-dim); }
+    .subscribe-form button { padding: 0 15px; border: 0; color: #1b150a; background: var(--amber); font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .subscribe-form button:hover { background: #ffca65; }
+    .site-footer { padding: 57px 0 20px; color: var(--text-gray); background: #08090b; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr .9fr 1fr; gap: 34px; padding-bottom: 40px; }
+    .footer-brand p { max-width: 275px; margin: 16px 0 0; color: var(--text-dim); font-size: 12px; }
+    .footer-title { margin: 2px 0 13px; color: var(--amber); font-size: 10px; font-weight: 700; letter-spacing: .12em; }
+    .footer-links { display: grid; gap: 7px; font-size: 11px; }
+    .footer-links a:hover { color: var(--amber); }
     .footer-links address { font-style: normal; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.17); color: rgba(255,255,255,.44); font: 600 10px/1.5 "Playfair Display", serif; letter-spacing: .1em; }
-
-    .toast { position: fixed; z-index: 50; right: 22px; bottom: 22px; max-width: min(370px, calc(100vw - 44px)); padding: 14px 18px; border-left: 3px solid var(--sand); color: #fff; background: var(--navy); box-shadow: var(--shadow); font-size: 14px; opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s ease, transform .25s ease; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 17px; border-top: 1px solid #22242a; color: #737782; font-size: 9px; }
+    .overlay { position: fixed; z-index: 39; inset: 0; visibility: hidden; background: rgba(0,0,0,.62); opacity: 0; transition: opacity .25s, visibility .25s; }
+    .overlay.open { visibility: visible; opacity: 1; }
+    .cart-drawer { position: fixed; z-index: 40; top: 0; right: 0; bottom: 0; width: min(430px,100%); display: flex; flex-direction: column; border-left: 1px solid var(--border-dark); background: #101115; box-shadow: var(--shadow-dark); transform: translateX(102%); transition: transform .28s ease; }
+    .cart-drawer.open { transform: translateX(0); }
+    .cart-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px; border-bottom: 1px solid var(--border-dark); }
+    .cart-head h2 { margin: 0; font: 700 20px/1.4 "Noto Serif TC", serif; }
+    .icon-button { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--border-dark); background: transparent; }
+    .icon-button:hover { border-color: var(--amber); color: var(--amber); }
+    .icon-button svg { width: 18px; height: 18px; }
+    .cart-items { flex: 1; overflow-y: auto; padding: 8px 22px; }
+    .cart-empty { padding: 50px 10px; color: var(--text-gray); text-align: center; }
+    .cart-empty strong { display: block; margin-bottom: 8px; color: var(--text-white); font: 600 16px/1.5 "Noto Serif TC", serif; }
+    .cart-row { display: grid; grid-template-columns: 1fr auto 34px; gap: 12px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border-dark); }
+    .cart-row strong { display: block; font-size: 12px; }
+    .cart-row small { color: var(--text-dim); font-size: 10px; }
+    .cart-row .row-price { color: var(--amber); font: 700 14px/1.4 "Playfair Display", "Noto Sans TC", serif; white-space: nowrap; }
+    .remove-item { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #493034; color: var(--danger); background: transparent; }
+    .remove-item:hover { background: #321b20; }
+    .remove-item svg { width: 15px; height: 15px; }
+    .cart-foot { padding: 18px 22px 22px; border-top: 1px solid var(--border-dark); }
+    .shipping-note { margin: 0 0 13px; color: var(--text-gray); font-size: 11px; }
+    .shipping-note strong { color: var(--amber); }
+    .cart-total { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 13px; }
+    .cart-total strong { color: var(--amber); font: 700 20px/1.4 "Playfair Display", "Noto Sans TC", serif; }
+    .checkout { width: 100%; }
+    .toast { position: fixed; z-index: 60; right: 24px; bottom: 24px; max-width: min(380px,calc(100vw - 48px)); padding: 13px 17px; border: 1px solid #57441f; border-left: 3px solid var(--amber); color: var(--text-white); background: #17171a; box-shadow: var(--shadow-dark); font-size: 12px; opacity: 0; pointer-events: none; transform: translateY(20px); transition: opacity .22s, transform .22s; }
     .toast.show { opacity: 1; transform: translateY(0); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 820px) {
-      .menu-toggle { display: grid; place-items: center; }
-      .nav { position: relative; }
-      .nav-links { position: absolute; top: 78px; right: -24px; left: -24px; max-height: 0; display: grid; gap: 0; overflow: hidden; background: #05233c; transition: max-height .35s ease; }
-      .nav-links.open { max-height: 300px; border-top: 1px solid rgba(255,255,255,.16); }
-      .nav-links a { display: block; padding: 13px 24px; }
-      .nav-links .nav-cta { margin: 5px 24px 15px; padding: 10px 13px; text-align: center; }
-      .hero { min-height: 710px; }
-      .hero-grid { min-height: 710px; grid-template-columns: 1fr; gap: 0; padding: 118px 0 43px; }
-      .hero-art { min-height: 276px; margin-top: -9px; }
-      .hero-art .sun { top: 19px; right: 20%; width: 130px; }
-      .mountain { height: 180px; }
-      .mountain--back { bottom: 69px; height: 150px; }
-      .coffee-vessel { right: 17%; bottom: -12px; transform: scale(.72); transform-origin: bottom right; }
-      .art-label { display: none; }
-      .scroll-cue { display: none; }
-      .story-grid, .brew-grid { grid-template-columns: 1fr; }
-      .story-visual { max-width: 525px; width: 100%; min-height: 400px; }
-      .coffee-grid { grid-template-columns: repeat(2, 1fr); }
-      .coffee-card:nth-child(3) { grid-column: span 2; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .footer-brand { grid-column: 1 / -1; }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 960px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 0; padding-block: 70px 20px; }
+      .hero-copy { max-width: 760px; }
+      .hero-art { min-height: 300px; margin-top: -5px; }
+      .roast-disc { top: 0; right: calc(50% - 165px); width: 215px; }
+      .coffee-cup { margin-top: 80px; transform: scale(.83); }
+      .cup-shadow { bottom: 26px; }
+      .art-label { top: 3px; left: 10%; }
+      .art-stamp { right: 9%; bottom: 10px; }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .principle { min-height: unset; }
+      .principle h3 { margin-top: 14px; }
+      .footer-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-brand { grid-column: 1/-1; }
     }
-    @media (max-width: 560px) {
-      .wrap { width: calc(100% - 34px); }
-      .nav-links { right: -17px; left: -17px; }
-      .hero { min-height: 680px; }
-      .hero-grid { min-height: 680px; padding-top: 106px; }
-      .hero h1 { font-size: 40px; }
-      .hero-lede { font-size: 14px; }
-      .hero-actions { gap: 9px; margin-top: 24px; }
-      .hero-actions .button, .hero-actions .outline-link { min-height: 46px; padding: 8px 15px; font-size: 13px; }
-      .hero-note { margin-top: 21px; }
-      .hero-art { min-height: 219px; }
-      .hero-art .sun { width: 92px; }
-      .coffee-vessel { right: 5%; bottom: -48px; transform: scale(.57); }
-      .story, .coffee, .brew { padding: 76px 0; }
-      .seal { width: 245px; height: 245px; }
-      .seal-inner b { font-size: 35px; }
-      .story-visual { min-height: 347px; }
-      .blue-note { width: 185px; padding: 20px; }
-      .blue-note p { font-size: 16px; }
-      .section-heading { display: block; margin-bottom: 28px; }
-      .section-heading p { margin-top: 14px; font-size: 14px; }
-      .coffee-grid { grid-template-columns: 1fr; }
-      .coffee-card, .coffee-card:nth-child(3) { min-height: 330px; grid-column: auto; }
-      .coffee-card { padding: 25px; }
-      .brew-art { height: 310px; }
-      .water-rings { top: 45px; width: 178px; height: 178px; box-shadow: 0 0 0 23px rgba(117,198,232,.12), 0 0 0 53px rgba(117,198,232,.065); }
-      .dripper { top: 95px; transform: translateX(-50%) scale(.75); }
-      .carafe { bottom: 37px; transform: translateX(-50%) scale(.75); }
-      .visit { padding: 76px 0; }
-      .subscribe-form { display: grid; gap: 0; border: 0; }
-      .subscribe-form input { min-height: 54px; border: 1px solid rgba(255,255,255,.62); }
-      .subscribe-form button { min-height: 54px; margin-top: 10px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 33px; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { display: grid; gap: 8px; }
+    @media (max-width: 768px) {
+      html { scroll-padding-top: 74px; }
+      .wrap { width: min(100% - 36px,1160px); }
+      .promo { min-height: 34px; gap: 7px; font-size: 10px; }
+      .nav { min-height: 64px; gap: 9px; }
+      .nav-links { position: absolute; top: 64px; right: -18px; left: -18px; max-height: 0; display: grid; gap: 0; overflow: hidden; border-bottom: 0 solid var(--border-dark); background: #101115; transition: max-height .25s ease, border-width .25s; }
+      .nav-links.open { max-height: 320px; border-bottom-width: 1px; }
+      .nav-links a { padding: 12px 21px; border-top: 1px solid #202127; font-size: 13px; }
+      .nav-actions { margin-left: auto; }
+      .cart-trigger { width: 40px; height: 40px; min-height: 40px; justify-content: center; padding: 0; }
+      .cart-trigger .cart-label { display: none; }
+      .cart-count { position: absolute; top: -6px; right: -6px; }
+      .menu-toggle { display: grid; }
+      .hero-grid { padding-top: 57px; }
+      .hero h1 { font-size: clamp(38px, 8vw, 55px); }
+      .hero-checks { grid-template-columns: 1fr; gap: 5px; }
+      .hero-art { min-height: 265px; }
+      .roast-disc { right: calc(50% - 133px); width: 180px; }
+      .coffee-cup { transform: scale(.72); }
+      .cup-shadow { bottom: 8px; width: 230px; }
+      .art-label { left: 2%; }
+      .art-stamp { right: 2%; bottom: 1px; }
+      .spec-strip { grid-template-columns: repeat(2,1fr); }
+      .spec-item { min-height: 67px; border-bottom: 1px solid var(--border-dark); }
+      .spec-item:nth-child(2) { border-right: 0; }
+      .spec-item:nth-child(n+3) { border-bottom: 0; }
+      .section { padding-block: 72px; }
+      .brew-grid { grid-template-columns: 1fr; }
+      .brew-visual { min-height: 340px; }
+      .brew-ring { top: 54px; width: 205px; }
+      .brew-filter { top: 112px; }
+      .brew-server { top: 237px; }
+      .product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .product:last-child { grid-column: 1/-1; }
+      .bundle-panel { grid-template-columns: 1fr; gap: 24px; padding: 29px 25px; }
+      .bundle-price { padding: 20px 0 0; border-top: 1px solid var(--border-dark); border-left: 0; }
+      .bundle-price strong { display: inline-block; margin: 0 0 0 11px; }
+      .review-grid { grid-template-columns: 1fr; }
+      .review { min-height: unset; }
+      .vip-grid { grid-template-columns: 1fr; gap: 22px; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: calc(100% - 32px); }
+      .promo { justify-content: flex-start; overflow: hidden; white-space: nowrap; }
+      .brand-mark { width: 33px; }
+      .brand-copy strong { font-size: 13px; }
+      .hero-grid { padding-top: 49px; }
+      .hero h1 { font-size: 39px; }
+      .hero-lede { font-size: 13px; }
+      .hero-actions .button { min-height: 44px; padding-inline: 13px; font-size: 11px; }
+      .hero-art { min-height: 235px; }
+      .roast-disc { right: calc(50% - 115px); width: 155px; }
+      .coffee-cup { margin-top: 64px; transform: scale(.62); }
+      .art-label { top: 0; left: 0; }
+      .art-stamp { right: 0; }
+      .art-stamp b { font-size: 17px; }
+      .spec-item { padding-inline: 10px; }
+      .spec-item strong { font-size: 11px; }
+      .section { padding-block: 64px; }
+      .section-heading h2, .section-title { font-size: 29px; }
+      .product-grid { grid-template-columns: 1fr; }
+      .product:last-child { grid-column: auto; }
+      .product-art { min-height: 165px; }
+      .promo-code { align-items: flex-start; flex-direction: column; gap: 2px; font-size: 11px; }
+      .bundle-panel { padding: 25px 19px; }
+      .bundle-includes { display: grid; gap: 4px; }
+      .subscribe-form { display: grid; gap: 9px; border: 0; background: transparent; }
+      .subscribe-form input { min-height: 48px; border: 1px solid #5b4b2d; background: rgba(9,10,13,.65); }
+      .subscribe-form button { min-height: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+      .footer-brand { grid-column: 1/-1; }
+      .footer-bottom { flex-direction: column; gap: 5px; }
+      .toast { right: 16px; bottom: 16px; max-width: calc(100vw - 32px); }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
       .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
+  <aside class="promo" aria-label="限時優惠公告"><span class="promo-badge">黑天專屬</span><span>腳沖咖啡喜好者特惠方案：今日下單全館低階咖啡豆滿 NT$ 399 即享免運！</span></aside>
   <header class="site-header" id="top">
     <nav class="nav wrap" aria-label="主要導覽">
-      <a class="brand" href="#top" aria-label="回到藍天咖啡首頁">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span>
-      </a>
-      <button class="menu-toggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單">☰</button>
+      <a class="brand" href="#top" aria-label="回到黑天咖啡首頁"><span class="brand-mark" aria-hidden="true">黑</span><span class="brand-copy"><strong>黑天咖啡</strong><small>DARK SKY COFFEE</small></span></a>
       <div class="nav-links" id="navLinks">
-        <a href="#story">我們的故事</a>
-        <a href="#coffee">本季選豆</a>
-        <a href="#brew">沖煮日常</a>
-        <a class="nav-cta" href="#visit">訂閱風味通信</a>
+        <a href="#philosophy">品牌風格</a><a href="#foot-brew">腳沖咖啡</a><a href="#products">低階好豆</a><a href="#bundle">消費特惠組</a><a href="#reviews">愛好者口碑</a>
+      </div>
+      <div class="nav-actions">
+        <button class="cart-trigger" id="openCartBtn" type="button" aria-label="開啟購物車，0 件商品" aria-controls="cartDrawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 4h2l2.2 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 1.9-1.4L22 9H6"/><circle cx="10" cy="21" r="1"/><circle cx="19" cy="21" r="1"/></svg><span class="cart-label">購物車</span><span class="cart-count" id="cartCountBadge">0</span></button>
+        <button class="menu-toggle" id="menuToggleBtn" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="開啟導覽選單"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       </div>
     </nav>
   </header>
-
   <main>
     <section class="hero" aria-labelledby="heroTitle">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">HAND BREWED · SLOWLY ROASTED</p>
-          <h1 id="heroTitle">讓風味，在<span>藍天</span>下慢慢抵達。</h1>
-          <p class="hero-lede">藍天咖啡為喜歡手沖的您，挑選值得細品的單一產區咖啡豆。從第一縷花香，到最後一口回甘，每一杯都有屬於自己的晴朗天氣。</p>
-          <div class="hero-actions">
-            <a class="button button--sand" href="#coffee">探索本季咖啡豆 →</a>
-            <a class="outline-link" href="#story">認識藍天</a>
-          </div>
-          <p class="hero-note">TAIPEI · TAIWAN · EST. 2025</p>
-          <span class="scroll-cue">SCROLL TO DISCOVER</span>
+          <p class="eyebrow">BLACK SKY COFFEE · FEET BREWED</p>
+          <h1 id="heroTitle">黑夜之下，以<span>腳沖咖啡</span>喚醒純粹本能。</h1>
+          <p class="hero-lede">專為腳沖咖啡喜好者打造。打破精品豆昂貴溢價，回到高 CP 值、耐萃又濃厚的低階咖啡豆，讓每天喝好咖啡不必想太多。</p>
+          <ul class="hero-checks"><li>嚴選親民低階咖啡豆</li><li>專為腳沖設計耐萃配方</li><li>單包只要 NT$ 99 起</li></ul>
+          <div class="hero-actions"><a class="button button--amber" href="#products">立即選購消費 <span aria-hidden="true">→</span></a><a class="button button--outline" href="#foot-brew">探索腳沖精神</a></div>
         </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="mountain mountain--back"></div>
-          <div class="mountain"></div>
-          <div class="horizon"></div>
-          <div class="coffee-vessel"><div class="vessel-neck"></div><div class="vessel-body"></div><div class="vessel-handle"></div></div>
-          <div class="art-label"><strong>92°C</strong><span>理想水溫</span><span>細細喚醒香氣</span></div>
+        <div class="hero-art" aria-label="黑天深焙咖啡意象">
+          <div class="roast-disc" aria-hidden="true"></div><div class="cup-shadow" aria-hidden="true"></div><div class="coffee-cup" aria-hidden="true"></div>
+          <div class="art-label"><strong>DARK ROAST ONLY</strong><span>● 限量烘焙在庫</span></div><div class="art-stamp"><b>100% 黑</b><span>厚實耐萃配方</span><span>踩穩日常每一步</span></div>
+        </div>
+      </div>
+      <div class="wrap spec-strip" aria-label="品牌特色摘要"><div class="spec-item"><small>品牌定位</small><strong>黑天低階豆風格</strong></div><div class="spec-item"><small>核心客群</small><strong>腳沖咖啡愛好者</strong></div><div class="spec-item"><small>主要色系</small><strong>極致黑 · Black Mode</strong></div><div class="spec-item"><small>今日優惠</small><strong>全場 8 折刺激消費</strong></div></div>
+    </section>
+
+    <section class="section philosophy" id="philosophy" aria-labelledby="philosophyTitle">
+      <div class="wrap"><div class="section-heading reveal"><p class="eyebrow">NO FANCY STORY · JUST GOOD COFFEE</p><h2 id="philosophyTitle">告別昂貴包裝，擁抱<span class="amber-text">低階咖啡豆</span>的純黑魅力</h2><p>低階，不是將就；是把預算留給每天都能享受的濃郁與踏實。</p></div>
+        <div class="philosophy-grid"><article class="principle reveal"><span class="principle-number">01 / EVERYDAY VALUE</span><h3>實惠低階，天天狂飲</h3><p>拋開莊園炒作神話，堅持高性價比與高容錯耐萃度。平民價格，天天喝也不必有負擔。</p></article><article class="principle reveal"><span class="principle-number">02 / DARK ROAST</span><h3>純黑淬鍊，重焙直球</h3><p>捨去繁複果酸與華麗包裝，讓焦糖、黑巧克力與可可厚感，直接落在舌尖。</p></article><article class="principle reveal"><span class="principle-number">03 / FEET ON EARTH</span><h3>無拘無束，自由腳沖</h3><p>腳踏實地的沖煮日常，不必裝模作樣。解放雙手，照自己的節奏喝一杯。</p></article></div>
+      </div>
+    </section>
+
+    <section class="section brew-section" id="foot-brew" aria-labelledby="brewTitle">
+      <div class="wrap brew-grid"><div class="brew-visual reveal" aria-label="以濾杯與咖啡壺呈現的沖煮示意圖"><div class="brew-ring" aria-hidden="true"></div><div class="brew-filter" aria-hidden="true"></div><div class="brew-server" aria-hidden="true"></div><div class="brew-caption"><span>粗獷深焙 / DAILY METHOD</span><strong>踏實沖，暢快喝。</strong></div></div>
+        <div class="brew-copy reveal"><p class="eyebrow">A BREWING ROUTINE, YOUR WAY</p><h2 class="section-title" id="brewTitle">什麼是腳沖咖啡？<br><span class="amber-text">打破框架的沖煮藝術</span></h2><p>不必追求完美參數，也不必假裝優雅。跟著自己的節奏，三步驟沖出一杯厚實、順口的日常黑咖啡。</p>
+          <div class="steps"><article class="step"><span class="step-number">01</span><div><h3>粗磨黑天低階豆</h3><p>使用粗顆粒研磨，保留原始油脂與炭焙香氣。</p></div></article><article class="step"><span class="step-number">02</span><div><h3>踏實穩定節奏注水</h3><p>均勻浸潤咖啡粉，以腳踏實地的身心節奏引導水流。</p></div></article><article class="step"><span class="step-number">03</span><div><h3>大口暢飲，滿電出發</h3><p>深邃濃稠的黑咖啡，迅速喚醒打拼精神。</p></div></article></div>
+          <blockquote class="quote">「喝咖啡不需要優雅裝模作樣。當你踩穩腳步、拿起一杯黑天腳沖，你喝下的是生活的真實與重量。」<cite>首席烘豆師 · 黑天咖啡</cite></blockquote>
+        </div>
+      </div>
+      <div class="wrap video-feature reveal">
+        <p class="eyebrow">WATCH THE VIDEO</p>
+        <h3>腳沖咖啡影片</h3>
+        <div class="video-frame" id="videoFrame">
+          <a class="video-preview" href="https://www.youtube.com/watch?v=hMOYa4EBntI" target="_blank" rel="noopener noreferrer" aria-label="在 YouTube 開啟腳沖咖啡影片">
+            <img src="https://img.youtube.com/vi/hMOYa4EBntI/hqdefault.jpg" alt="">
+            <span class="video-play">在 YouTube 開啟影片</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="story" id="story" aria-labelledby="storyTitle">
-      <div class="wrap story-grid">
-        <div class="story-visual reveal" aria-hidden="true">
-          <div class="seal"><div class="seal-inner"><b>B</b><span>慢一點，更清楚。</span><small>LET THE FLAVOUR SPEAK</small></div></div>
-          <aside class="blue-note"><p class="eyebrow">BLUE SKY NOTE</p><p>一杯好咖啡，從來不是匆忙完成的事。</p></aside>
-        </div>
-        <div class="story-copy reveal">
-          <p class="eyebrow">OUR PHILOSOPHY</p>
-          <h2 class="section-title" id="storyTitle">在一杯之間，看見產地的<span class="text-blue">晴朗</span>。</h2>
-          <p>我們相信，精品咖啡的美好不該被複雜掩蓋。以小批次烘焙留住豆子的個性，再用穩定、誠實的手沖，讓風土與時間在杯中變得清晰。</p>
-          <p>給懂得放慢腳步的人，也給每一個想重新認識咖啡的人。</p>
-          <a class="inline-link" href="#brew">看看我們如何沖煮 <span aria-hidden="true">→</span></a>
+    <section class="section products" id="products" aria-labelledby="productsTitle">
+      <div class="wrap"><div class="section-heading reveal"><p class="eyebrow">DARK ROAST, HONEST PRICE</p><h2 id="productsTitle">低階好豆，<span class="amber-text">今天就喝</span></h2><p>粗獷深焙、濃郁炭香、百元有找，把高性價比沖進你的日常。</p></div>
+        <div class="promo-code"><span>🔥 限時消費滿額活動：結帳輸入 <b>DARK100</b> 折抵 100 元</span><span>全館滿 NT$ 399 免運</span></div>
+        <div class="product-grid">
+          <article class="product reveal"><div class="product-art" aria-hidden="true"><div class="bean-bag"><span>黑天 1 號</span><small>DARK SKY / NO.01</small></div></div><div class="product-content"><span class="product-kicker">01 / DARK ROAST</span><h3>黑天 1 號：粗獷深焙豆</h3><p class="product-meta">250g・深焙低階配方</p><div class="tags"><span>苦黑巧克力</span><span>炭香</span><span>回甘甜感</span></div><div class="product-bottom"><span class="price"><del>NT$ 180</del><strong>NT$ 120</strong></span><button class="add-button" type="button" data-product="p1">＋ 立即消費</button></div></div></article>
+          <article class="product reveal"><div class="product-art" aria-hidden="true"><div class="bean-bag"><span>夜行者</span><small>DARK SKY / NO.02</small></div></div><div class="product-content"><span class="product-kicker">02 / EXTRA DARK</span><h3>夜行者：重擊炭火豆</h3><p class="product-meta">250g・極深焙平價純豆</p><div class="tags"><span>柴燒炭香</span><span>重糖蜜</span><span>超濃油脂</span></div><div class="product-bottom"><span class="price"><del>NT$ 200</del><strong>NT$ 145</strong></span><button class="add-button" type="button" data-product="p2">＋ 立即消費</button></div></div></article>
+          <article class="product reveal"><div class="product-art" aria-hidden="true"><div class="bean-bag"><span>赤腳大地</span><small>DARK SKY / NO.03</small></div></div><div class="product-content"><span class="product-kicker">03 / DAILY BLEND</span><h3>赤腳大地：平民口糧豆</h3><p class="product-meta">200g・平民曼巴日常配方</p><div class="tags"><span>堅果烤麥</span><span>低酸度</span><span>順暢無負擔</span></div><div class="product-bottom"><span class="price"><del>NT$ 150</del><strong>NT$ 99</strong></span><button class="add-button" type="button" data-product="p3">＋ 立即消費</button></div></div></article>
         </div>
       </div>
     </section>
 
-    <section class="coffee" id="coffee" aria-labelledby="coffeeTitle">
-      <div class="wrap">
-        <div class="section-heading reveal">
-          <div><p class="eyebrow">SEASONAL SELECTION</p><h2 class="section-title" id="coffeeTitle">今天，想喝哪一片<span class="text-blue">藍天</span>？</h2></div>
-          <p>三款當季單品，為不同的晨光、午後與靜夜而選。</p>
-        </div>
-        <div class="coffee-grid">
-          <article class="coffee-card reveal">
-            <div class="card-top">01 / BRIGHT</div><p class="origin">ETHIOPIA · YIRGACHEFFE</p><h3>衣索比亞・耶加雪菲</h3><p class="flavour">白花、佛手柑、蜂蜜</p>
-            <div class="card-footer"><span class="price">NT$ 520 / 200g</span><button class="save-coffee" type="button" data-coffee="衣索比亞・耶加雪菲">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">02 / JUICY</div><p class="origin">KENYA · KIRINYAGA</p><h3>肯亞・祈安布</h3><p class="flavour">黑醋栗、洛神、葡萄柚</p>
-            <div class="card-footer"><span class="price">NT$ 580 / 200g</span><button class="save-coffee" type="button" data-coffee="肯亞・祈安布">加入收藏 ＋</button></div>
-          </article>
-          <article class="coffee-card reveal">
-            <div class="card-top">03 / ROUND</div><p class="origin">COLOMBIA · HUILA</p><h3>哥倫比亞・慧蘭</h3><p class="flavour">黃桃、焦糖、可可尾韻</p>
-            <div class="card-footer"><span class="price">NT$ 460 / 200g</span><button class="save-coffee" type="button" data-coffee="哥倫比亞・慧蘭">加入收藏 ＋</button></div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <section class="bundle" id="bundle" aria-labelledby="bundleTitle"><div class="wrap bundle-panel reveal"><div class="bundle-copy"><p class="eyebrow">THE FEET-BREW STARTER SET</p><h2 id="bundleTitle">【腳沖咖啡新手無痛消費全餐組】</h2><p>三款黑天人氣豆一次帶齊，從第一杯開始找到你的重焙日常。</p><ul class="bundle-includes"><li>黑天 1 號粗獷豆 250g</li><li>夜行者炭火豆 250g</li><li>赤腳大地口糧豆 200g</li><li>全台本島免運送到府</li></ul></div><div class="bundle-price"><small>組合現省 NT$ 170　原價 <del>NT$ 469</del></small><strong>NT$ 299</strong><button class="button button--amber" id="addBundleBtn" type="button">立即消費整組搶購 <span aria-hidden="true">⚡</span></button></div></div></section>
 
-    <section class="brew" id="brew" aria-labelledby="brewTitle">
-      <div class="wrap brew-grid">
-        <div class="brew-art reveal" aria-hidden="true"><div class="water-rings"></div><div class="dripper"></div><div class="carafe"></div><div class="brew-caption"><span>V60 / 15G : 240ML</span><strong>2'45''</strong></div></div>
-        <div class="brew-copy reveal">
-          <p class="eyebrow">A QUIET RITUAL</p>
-          <h2 class="section-title" id="brewTitle">把時間交給水，讓咖啡說<span class="text-blue">自己的話</span>。</h2>
-          <p>不需要繁複儀式，只要三個安靜的步驟。每一個參數，都是為了讓你更靠近豆子原本的樣子。</p>
-          <div class="brew-steps">
-            <div class="brew-step"><span class="step-number">01</span><div><h3>研磨，先聞見期待</h3><p>15g 中細研磨，讓香氣從指尖開始展開。</p></div></div>
-            <div class="brew-step"><span class="step-number">02</span><div><h3>悶蒸，等待第一個呼吸</h3><p>以 92°C 熱水浸潤 30 秒，喚醒甜感與層次。</p></div></div>
-            <div class="brew-step"><span class="step-number">03</span><div><h3>注水，保持自己的節奏</h3><p>穩定畫圈，讓 240ml 的清澈在 2 分 45 秒完成。</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="section reviews" id="reviews" aria-labelledby="reviewsTitle"><div class="wrap"><div class="section-heading reveal"><p class="eyebrow">REAL PEOPLE · REAL DAILY BREW</p><h2 id="reviewsTitle">腳沖愛好者，<span class="amber-text">喝過就知道</span></h2><p>不只一杯咖啡，也是一種踏實自在的日常。</p></div><div class="review-grid"><article class="review reveal"><div class="stars" aria-label="5 顆星">★★★★★</div><blockquote>「低階豆實惠又香濃，腳沖起來也很耐喝。現在每天都有咖啡，荷包終於不用再大失血。」</blockquote><div class="reviewer"><strong>阿強</strong><span>自由接案設計師・腳沖 2 年</span></div></article><article class="review reveal"><div class="stars" aria-label="5 顆星">★★★★★</div><blockquote>「純黑風格很對味，赤腳大地百元有找，成了我每天上工前最可靠的醒腦口糧。」</blockquote><div class="reviewer"><strong>小凱</strong><span>軟體工程師</span></div></article><article class="review reveal"><div class="stars" aria-label="5 顆星">★★★★★</div><blockquote>「腳沖配粗獷豆的油脂厚度很有感，完全打破我對平價低階豆的刻板印象。」</blockquote><div class="reviewer"><strong>佩佩</strong><span>戶外運動玩家</span></div></article></div></div></section>
 
-    <section class="visit" id="visit" aria-labelledby="visitTitle">
-      <div class="wrap reveal">
-        <p class="eyebrow">THE BLUE SKY LETTER</p>
-        <h2 id="visitTitle">把下一杯好咖啡，寄到你的日常裡。</h2>
-        <p>每月一封風味通信，分享新豆、沖煮靈感與只給會員的小小驚喜。</p>
-        <form class="subscribe-form" id="subscribeForm">
-          <input type="email" aria-label="電子郵件地址" placeholder="your@email.com" required>
-          <button type="submit">訂閱風味通信</button>
-        </form>
-      </div>
-    </section>
+    <section class="vip" aria-labelledby="vipTitle"><div class="wrap vip-grid"><div class="reveal"><p class="eyebrow">DARK SKY MEMBERS CLUB</p><h2 id="vipTitle">加入黑天咖啡，立即領取 <span class="amber-text">NT$ 50 消費折價券</span></h2><p>留下 Email，折價券即刻送達。另享會員消費 5% 回饋。</p></div><form class="subscribe-form reveal" id="subscribeForm"><input type="email" name="email" autocomplete="email" aria-label="電子郵件地址" placeholder="輸入你的 Email" required><button type="submit">免費領取折價券 <span aria-hidden="true">📩</span></button></form></div></section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-grid">
-      <div class="footer-brand"><a class="brand" href="#top" aria-label="回到藍天咖啡首頁"><span class="brand-mark" aria-hidden="true">B</span><span class="brand-copy"><strong>藍天咖啡</strong><small>BLUE SKY COFFEE</small></span></a><p>為喜愛手沖咖啡的你，留下 一段慢慢品味、微微放晴的時間。</p></div>
-      <div><p class="footer-title">網站主題</p><div class="footer-links"><a href="#story">我們的故事</a><a href="#coffee">本季選豆</a><a href="#brew">沖煮日常</a></div></div>
-      <div><p class="footer-title">聯絡我們</p><div class="footer-links"><a href="mailto:hello@bluesky.coffee">hello@bluesky.coffee</a><address>台中市西屯區僑光路 100 號</address><span>每日 10:00 — 19:00</span></div></div>
-    </div>
-    <div class="wrap footer-bottom"><span>© 2025 BLUE SKY COFFEE. ALL RIGHTS RESERVED.</span><span>BREW SLOW · LIVE BRIGHT</span></div>
-  </footer>
-  <div class="toast" role="status" aria-live="polite"></div>
+  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><a class="brand" href="#top" aria-label="回到黑天咖啡首頁"><span class="brand-mark" aria-hidden="true">黑</span><span class="brand-copy"><strong>黑天咖啡</strong><small>DARK SKY COFFEE</small></span></a><p>推廣腳沖文化與低階平價好豆。黑夜之下，以腳沖咖啡喚醒純粹本能。</p></div><div><h2 class="footer-title">品牌探索</h2><div class="footer-links"><a href="#philosophy">低階豆哲學</a><a href="#foot-brew">腳沖咖啡技巧</a><a href="#products">全部咖啡豆</a><a href="#bundle">超值組合優惠</a></div></div><div><h2 class="footer-title">消費支援</h2><div class="footer-links"><a href="#top" data-open-cart>開啟購物車</a><span>配送須知：48 小時出貨</span><a href="mailto:service@darksky.coffee?subject=售後退換">售後退換說明</a><span>會員消費 5% 回饋</span></div></div><div><h2 class="footer-title">門市客服</h2><div class="footer-links"><a href="mailto:service@darksky.coffee">service@darksky.coffee</a><address>週一至週日 09:00 - 22:00</address></div></div></div><div class="wrap footer-bottom"><span>© 2026 黑天咖啡 DARK SKY COFFEE. 版權所有.</span><span>BLACK SKY · FEET BREWED</span></div></footer>
+
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-modal="true" role="dialog" aria-hidden="true"><div class="cart-head"><h2 id="cartTitle">你的購物車 <span id="cartHeadCount">(0)</span></h2><button class="icon-button" id="closeCartBtn" type="button" aria-label="關閉購物車"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="cart-items" id="cartItems" aria-live="polite"></div><div class="cart-foot"><p class="shipping-note" id="shippingNote">全館滿 <strong>NT$ 399</strong> 即享免運，距離免運還差 NT$ 399。</p><div class="cart-total"><span>合計</span><strong id="cartTotalPrice">NT$ 0</strong></div><button class="button button--amber checkout" id="checkoutBtn" type="button">前往結帳消費 <span aria-hidden="true">➔</span></button></div></aside>
+  <div class="toast" id="toastBox" role="status" aria-live="polite"></div>
 
   <script>
     (() => {
-      const menuButton = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      const toast = document.querySelector('.toast');
+      const videoFrame = document.querySelector('#videoFrame');
+      if (window.location.protocol !== 'file:') {
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/hMOYa4EBntI';
+        iframe.title = '黑天咖啡腳沖咖啡影片';
+        iframe.loading = 'lazy';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.allowFullscreen = true;
+        videoFrame.replaceChildren(iframe);
+      }
+      const products = {
+        p1: { name: '黑天 1 號：粗獷深焙豆', price: 120 },
+        p2: { name: '夜行者：重擊炭火豆', price: 145 },
+        p3: { name: '赤腳大地：平民口糧豆', price: 99 },
+        bundle: { name: '腳沖咖啡新手無痛消費全餐組', price: 299 }
+      };
+      const cart = [];
+      const cartDrawer = document.querySelector('#cartDrawer');
+      const cartOverlay = document.querySelector('#cartOverlay');
+      const cartItems = document.querySelector('#cartItems');
+      const cartBadge = document.querySelector('#cartCountBadge');
+      const cartHeadCount = document.querySelector('#cartHeadCount');
+      const cartTotal = document.querySelector('#cartTotalPrice');
+      const shippingNote = document.querySelector('#shippingNote');
+      const toast = document.querySelector('#toastBox');
+      const menuButton = document.querySelector('#menuToggleBtn');
+      const navLinks = document.querySelector('#navLinks');
       let toastTimer;
+      let previousFocus;
 
+      const showToast = message => {
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.add('show');
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
+      };
+      const renderCart = () => {
+        const total = cart.reduce((sum, item) => sum + item.price, 0);
+        cartBadge.textContent = String(cart.length);
+        cartHeadCount.textContent = `(${cart.length})`;
+        document.querySelector('#openCartBtn').setAttribute('aria-label', `開啟購物車，${cart.length} 件商品`);
+        cartTotal.textContent = `NT$ ${total}`;
+        shippingNote.innerHTML = total >= 399
+          ? '已達免運門檻，<strong>本島配送免運</strong>。'
+          : `全館滿 <strong>NT$ 399</strong> 即享免運，距離免運還差 NT$ ${399 - total}。`;
+        if (!cart.length) {
+          cartItems.innerHTML = '<div class="cart-empty"><strong>購物車目前是空的</strong>挑一包喜歡的低階好豆，開始你的腳沖日常。</div>';
+          return;
+        }
+        cartItems.replaceChildren(...cart.map((item, index) => {
+          const row = document.createElement('div');
+          row.className = 'cart-row';
+          const name = document.createElement('div');
+          const title = document.createElement('strong');
+          title.textContent = item.name;
+          const detail = document.createElement('small');
+          detail.textContent = '黑天咖啡・單件';
+          name.append(title, detail);
+          const price = document.createElement('span');
+          price.className = 'row-price';
+          price.textContent = `NT$ ${item.price}`;
+          const remove = document.createElement('button');
+          remove.className = 'remove-item';
+          remove.type = 'button';
+          remove.setAttribute('aria-label', `移除${item.name}`);
+          remove.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M10 11v6m4-6v6M6 7l1 14h10l1-14M9 7V4h6v3"/></svg>';
+          remove.addEventListener('click', () => {
+            cart.splice(index, 1);
+            renderCart();
+            showToast('已從購物車移除商品。');
+          });
+          row.append(name, price, remove);
+          return row;
+        }));
+      };
+      const addToCart = productId => {
+        cart.push({ ...products[productId] });
+        renderCart();
+        showToast(`已將「${products[productId].name}」加入購物車。`);
+      };
+      const openCart = () => {
+        previousFocus = document.activeElement;
+        cartDrawer.classList.add('open');
+        cartOverlay.classList.add('open');
+        cartDrawer.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('drawer-open');
+        document.querySelector('#closeCartBtn').focus();
+      };
+      const closeCart = () => {
+        cartDrawer.classList.remove('open');
+        cartOverlay.classList.remove('open');
+        cartDrawer.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('drawer-open');
+        if (previousFocus instanceof HTMLElement) previousFocus.focus();
+      };
+      document.querySelectorAll('[data-product]').forEach(button => button.addEventListener('click', () => addToCart(button.dataset.product)));
+      document.querySelector('#addBundleBtn').addEventListener('click', () => addToCart('bundle'));
+      document.querySelector('#openCartBtn').addEventListener('click', openCart);
+      document.querySelectorAll('[data-open-cart]').forEach(link => link.addEventListener('click', event => { event.preventDefault(); openCart(); }));
+      document.querySelector('#closeCartBtn').addEventListener('click', closeCart);
+      cartOverlay.addEventListener('click', closeCart);
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          closeCart();
+          closeMenu();
+        }
+      });
+      document.querySelector('#checkoutBtn').addEventListener('click', () => {
+        if (!cart.length) {
+          showToast('購物車還沒有商品，先挑選一款低階好豆吧。');
+          return;
+        }
+        cart.length = 0;
+        renderCart();
+        closeCart();
+        showToast('感謝支持黑天咖啡，祝你今天腳沖順利！');
+      });
       const closeMenu = () => {
         navLinks.classList.remove('open');
         menuButton.setAttribute('aria-expanded', 'false');
         menuButton.setAttribute('aria-label', '開啟導覽選單');
-        menuButton.textContent = '☰';
       };
       menuButton.addEventListener('click', () => {
         const opening = !navLinks.classList.contains('open');
         navLinks.classList.toggle('open', opening);
         menuButton.setAttribute('aria-expanded', String(opening));
         menuButton.setAttribute('aria-label', opening ? '關閉導覽選單' : '開啟導覽選單');
-        menuButton.textContent = opening ? '×' : '☰';
       });
       navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-
-      const showToast = message => {
-        clearTimeout(toastTimer);
-        toast.textContent = message;
-        toast.classList.add('show');
-        toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-      };
-      document.querySelectorAll('[data-coffee]').forEach(button => {
-        button.addEventListener('click', () => showToast(`已將「${button.dataset.coffee}」加入你的收藏。`));
-      });
       document.querySelector('#subscribeForm').addEventListener('submit', event => {
         event.preventDefault();
+        const email = new FormData(event.currentTarget).get('email');
         event.currentTarget.reset();
-        showToast('謝謝訂閱，下一封晴朗的風味通信即將寄出。');
+        showToast(`折價券已為 ${email} 準備好，感謝加入黑天咖啡！`);
       });
-
+      renderCart();
       const revealItems = document.querySelectorAll('.reveal');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (!('IntersectionObserver' in window) || reducedMotion) {
+      if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         revealItems.forEach(item => item.classList.add('visible'));
       } else {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: .12 });
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        }), { threshold: .12 });
         revealItems.forEach(item => observer.observe(item));
       }
     })();
