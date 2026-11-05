@@ -72,19 +72,8 @@
     .button--amber:hover { background: #ffca65; }
     .button--outline { border-color: #55545a; color: var(--text-white); background: transparent; }
     .button--outline:hover { border-color: var(--amber); color: var(--amber); }
-    .hero-art { position: relative; min-height: 435px; display: grid; place-items: center; }
-    .roast-disc { position: absolute; top: 21px; right: 33px; width: 260px; aspect-ratio: 1; border: 1px solid rgba(255,184,48,.2); border-radius: 50%; background: radial-gradient(circle at 43% 42%, #25201a 0 15%, #171511 16% 38%, #100f0d 39% 57%, transparent 58%); box-shadow: 0 0 0 22px rgba(255,184,48,.025), inset 0 0 45px rgba(255,184,48,.08); }
-    .roast-disc::before, .roast-disc::after { position: absolute; top: 50%; left: 50%; width: 1px; height: 110%; background: rgba(255,184,48,.09); content: ""; transform: translate(-50%,-50%) rotate(42deg); }
-    .roast-disc::after { transform: translate(-50%,-50%) rotate(-42deg); }
-    .coffee-cup { position: relative; z-index: 2; width: 210px; height: 154px; margin-top: 100px; border: 1px solid #65543a; border-radius: 12px 12px 42% 42% / 10px 10px 30% 30%; background: linear-gradient(110deg, #28231b 0%, #111214 34%, #252019 68%, #101113 100%); box-shadow: 0 34px 34px rgba(0,0,0,.62), inset 10px 3px 14px rgba(255,255,255,.035); }
-    .coffee-cup::before { position: absolute; top: -9px; left: -1px; width: 100%; height: 19px; border: 1px solid #7e6335; border-radius: 50%; background: radial-gradient(ellipse, #1d100b 0 46%, #5d4423 49% 53%, #141314 57%); content: ""; }
-    .coffee-cup::after { position: absolute; top: 25px; right: -51px; width: 56px; height: 66px; border: 10px solid #6e593a; border-left: 0; border-radius: 0 40px 40px 0; content: ""; }
-    .cup-shadow { position: absolute; bottom: 57px; width: 295px; height: 25px; border-radius: 50%; background: rgba(0,0,0,.65); filter: blur(8px); }
-    .art-label { position: absolute; z-index: 3; top: 9px; left: 8px; display: grid; gap: 5px; }
-    .art-label strong { color: var(--amber); font: 700 11px/1.4 "Playfair Display", serif; letter-spacing: .17em; }
-    .art-label span { color: var(--text-dim); font-size: 10px; }
-    .art-stamp { position: absolute; right: 4px; bottom: 35px; display: grid; gap: 3px; color: var(--text-gray); font-size: 10px; text-align: right; }
-    .art-stamp b { color: var(--amber); font: 700 20px/1.2 "Playfair Display", serif; }
+    .hero-art { position: relative; width: 400px; height: 300px; justify-self: end; }
+    .hero-photo { display: block; width: 400px; height: 300px; border: 1px solid #665637; object-fit: cover; box-shadow: var(--shadow-dark); }
     .spec-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border-dark); background: rgba(8,9,11,.62); }
     .spec-item { min-height: 82px; display: grid; align-content: center; gap: 3px; padding: 12px 17px; border-right: 1px solid var(--border-dark); }
     .spec-item:last-child { border-right: 0; }
@@ -225,12 +214,7 @@
     @media (max-width: 960px) {
       .hero-grid { grid-template-columns: 1fr; gap: 0; padding-block: 70px 20px; }
       .hero-copy { max-width: 760px; }
-      .hero-art { min-height: 300px; margin-top: -5px; }
-      .roast-disc { top: 0; right: calc(50% - 165px); width: 215px; }
-      .coffee-cup { margin-top: 80px; transform: scale(.83); }
-      .cup-shadow { bottom: 26px; }
-      .art-label { top: 3px; left: 10%; }
-      .art-stamp { right: 9%; bottom: 10px; }
+      .hero-art { justify-self: center; }
       .philosophy-grid { grid-template-columns: 1fr; }
       .principle { min-height: unset; }
       .principle h3 { margin-top: 14px; }
@@ -253,12 +237,8 @@
       .hero-grid { padding-top: 57px; }
       .hero h1 { font-size: clamp(38px, 8vw, 55px); }
       .hero-checks { grid-template-columns: 1fr; gap: 5px; }
-      .hero-art { min-height: 265px; }
-      .roast-disc { right: calc(50% - 133px); width: 180px; }
-      .coffee-cup { transform: scale(.72); }
-      .cup-shadow { bottom: 8px; width: 230px; }
-      .art-label { left: 2%; }
-      .art-stamp { right: 2%; bottom: 1px; }
+      .hero-art { width: min(400px,100%); height: auto; aspect-ratio: 4 / 3; }
+      .hero-photo { width: 100%; height: 100%; }
       .spec-strip { grid-template-columns: repeat(2,1fr); }
       .spec-item { min-height: 67px; border-bottom: 1px solid var(--border-dark); }
       .spec-item:nth-child(2) { border-right: 0; }
@@ -287,12 +267,6 @@
       .hero h1 { font-size: 39px; }
       .hero-lede { font-size: 13px; }
       .hero-actions .button { min-height: 44px; padding-inline: 13px; font-size: 11px; }
-      .hero-art { min-height: 235px; }
-      .roast-disc { right: calc(50% - 115px); width: 155px; }
-      .coffee-cup { margin-top: 64px; transform: scale(.62); }
-      .art-label { top: 0; left: 0; }
-      .art-stamp { right: 0; }
-      .art-stamp b { font-size: 17px; }
       .spec-item { padding-inline: 10px; }
       .spec-item strong { font-size: 11px; }
       .section { padding-block: 64px; }
@@ -342,10 +316,7 @@
           <ul class="hero-checks"><li>嚴選親民低階咖啡豆</li><li>專為腳沖設計耐萃配方</li><li>單包只要 NT$ 99 起</li></ul>
           <div class="hero-actions"><a class="button button--amber" href="#products">立即選購消費 <span aria-hidden="true">→</span></a><a class="button button--outline" href="#foot-brew">探索腳沖精神</a></div>
         </div>
-        <div class="hero-art" aria-label="黑天深焙咖啡意象">
-          <div class="roast-disc" aria-hidden="true"></div><div class="cup-shadow" aria-hidden="true"></div><div class="coffee-cup" aria-hidden="true"></div>
-          <div class="art-label"><strong>DARK ROAST ONLY</strong><span>● 限量烘焙在庫</span></div><div class="art-stamp"><b>100% 黑</b><span>厚實耐萃配方</span><span>踩穩日常每一步</span></div>
-        </div>
+        <div class="hero-art"><img class="hero-photo" src="images/hero.jpg" width="400" height="300" alt="窗邊咖啡桌與山景，晨光映照手沖咖啡的日常"></div>
       </div>
       <div class="wrap spec-strip" aria-label="品牌特色摘要"><div class="spec-item"><small>品牌定位</small><strong>黑天低階豆風格</strong></div><div class="spec-item"><small>核心客群</small><strong>腳沖咖啡愛好者</strong></div><div class="spec-item"><small>主要色系</small><strong>極致黑 · Black Mode</strong></div><div class="spec-item"><small>今日優惠</small><strong>全場 8 折刺激消費</strong></div></div>
     </section>
@@ -393,7 +364,7 @@
     <section class="vip" aria-labelledby="vipTitle"><div class="wrap vip-grid"><div class="reveal"><p class="eyebrow">DARK SKY MEMBERS CLUB</p><h2 id="vipTitle">加入黑天咖啡，立即領取 <span class="amber-text">NT$ 50 消費折價券</span></h2><p>留下 Email，折價券即刻送達。另享會員消費 5% 回饋。</p></div><form class="subscribe-form reveal" id="subscribeForm"><input type="email" name="email" autocomplete="email" aria-label="電子郵件地址" placeholder="輸入你的 Email" required><button type="submit">免費領取折價券 <span aria-hidden="true">📩</span></button></form></div></section>
   </main>
 
-  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><a class="brand" href="#top" aria-label="回到黑天咖啡首頁"><span class="brand-mark" aria-hidden="true">黑</span><span class="brand-copy"><strong>黑天咖啡</strong><small>DARK SKY COFFEE</small></span></a><p>推廣腳沖文化與低階平價好豆。黑夜之下，以腳沖咖啡喚醒純粹本能。</p></div><div><h2 class="footer-title">品牌探索</h2><div class="footer-links"><a href="#philosophy">低階豆哲學</a><a href="#foot-brew">腳沖咖啡技巧</a><a href="#products">全部咖啡豆</a><a href="#bundle">超值組合優惠</a></div></div><div><h2 class="footer-title">消費支援</h2><div class="footer-links"><a href="#top" data-open-cart>開啟購物車</a><span>配送須知：48 小時出貨</span><a href="mailto:service@darksky.coffee?subject=售後退換">售後退換說明</a><span>會員消費 5% 回饋</span></div></div><div><h2 class="footer-title">門市客服</h2><div class="footer-links"><a href="mailto:service@darksky.coffee">service@darksky.coffee</a><address>週一至週日 09:00 - 22:00</address></div></div></div><div class="wrap footer-bottom"><span>© 2026 黑天咖啡 DARK SKY COFFEE. 版權所有.</span><span>BLACK SKY · FEET BREWED</span></div></footer>
+  <footer class="site-footer"><div class="wrap footer-grid"><div class="footer-brand"><a class="brand" href="#top" aria-label="回到黑天咖啡首頁"><span class="brand-mark" aria-hidden="true">黑</span><span class="brand-copy"><strong>黑天咖啡</strong><small>DARK SKY COFFEE</small></span></a><p>推廣腳沖文化與低階平價好豆。黑夜之下，以腳沖咖啡喚醒純粹本能。</p></div><div><h2 class="footer-title">品牌探索</h2><div class="footer-links"><a href="#philosophy">低階豆哲學</a><a href="#foot-brew">腳沖咖啡技巧</a><a href="#products">全部咖啡豆</a><a href="#bundle">超值組合優惠</a></div></div><div><h2 class="footer-title">消費支援</h2><div class="footer-links"><a href="#top" data-open-cart>開啟購物車</a><span>配送須知：48 小時出貨</span><a href="mailto:service@darksky.coffee?subject=售後退換">售後退換說明</a><span>會員消費 5% 回饋</span></div></div><div><h2 class="footer-title">門市客服</h2><div class="footer-links"><a href="mailto:service@darksky.coffee">service@darksky.coffee</a><address>週一至週日 09:00 - 22:00</address></div></div></div><div class="wrap footer-bottom"><span>© 2026 黑天咖啡 DARK SKY COFFEE. 版權所有.</span><span>BLACK SKY · FEET BREWED</span><span>台中市西屯區僑光路</span></div></footer>
 
   <div class="overlay" id="cartOverlay"></div>
   <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-modal="true" role="dialog" aria-hidden="true"><div class="cart-head"><h2 id="cartTitle">你的購物車 <span id="cartHeadCount">(0)</span></h2><button class="icon-button" id="closeCartBtn" type="button" aria-label="關閉購物車"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="cart-items" id="cartItems" aria-live="polite"></div><div class="cart-foot"><p class="shipping-note" id="shippingNote">全館滿 <strong>NT$ 399</strong> 即享免運，距離免運還差 NT$ 399。</p><div class="cart-total"><span>合計</span><strong id="cartTotalPrice">NT$ 0</strong></div><button class="button button--amber checkout" id="checkoutBtn" type="button">前往結帳消費 <span aria-hidden="true">➔</span></button></div></aside>
