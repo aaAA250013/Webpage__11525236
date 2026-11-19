@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">咖啡與晨光</title>
+  <desc id="desc">陶杯咖啡、咖啡豆與柔和的窗邊光影。</desc>
+  <defs>
+    <linearGradient id="wall" x2="1" y2="1"><stop stop-color="#d9c8a7"/><stop offset="1" stop-color="#8d7355"/></linearGradient>
+    <linearGradient id="table" x2="0" y2="1"><stop stop-color="#624332"/><stop offset="1" stop-color="#34271f"/></linearGradient>
+    <linearGradient id="cup" x2="1" y2="1"><stop stop-color="#f3e7d0"/><stop offset="1" stop-color="#b9a489"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#f3dfb2" stop-opacity=".9"/><stop offset="1" stop-color="#f3dfb2" stop-opacity="0"/></radialGradient>
+    <filter id="shadow" x="-.4" y="-.4" width="1.8" height="1.9"><feGaussianBlur stdDeviation="17"/></filter>
+  </defs>
+  <rect width="900" height="700" fill="url(#wall)"/>
+  <rect x="72" y="0" width="296" height="390" fill="#d5c5a5" opacity=".8"/>
+  <path d="M220 0h24v390h-24zM72 180h296v18H72z" fill="#8b795d" opacity=".45"/>
+  <ellipse cx="615" cy="345" rx="380" ry="330" fill="url(#glow)"/>
+  <path d="M0 465c190-34 330-9 482 7 172 19 286 5 418-29v257H0z" fill="url(#table)"/>
+  <path d="M0 504c210-26 388 33 900-7" fill="none" stroke="#947052" stroke-opacity=".45" stroke-width="5"/>
+  <ellipse cx="531" cy="546" rx="203" ry="48" fill="#170f0b" opacity=".4" filter="url(#shadow)"/>
+  <ellipse cx="514" cy="529" rx="190" ry="34" fill="#bca27b"/>
+  <ellipse cx="514" cy="519" rx="160" ry="23" fill="#e2d4b8"/>
+  <path d="M388 327h222l-25 168c-4 31-31 53-62 53h-48c-31 0-58-22-62-53z" fill="url(#cup)"/>
+  <path d="M610 363h45c42 0 49 77 6 94l-51 17" fill="none" stroke="#cabb9f" stroke-width="23"/>
+  <ellipse cx="499" cy="330" rx="111" ry="27" fill="#e9ddc6"/>
+  <ellipse cx="499" cy="332" rx="92" ry="17" fill="#39251a"/>
+  <path d="M453 329c15-12 30-12 45 0s30 12 45 0" fill="none" stroke="#b67a46" stroke-width="5" opacity=".8"/>
+  <path d="M477 298c-12-20 8-24-1-42m35 42c-12-20 8-24-1-42" fill="none" stroke="#f4e3bf" stroke-linecap="round" stroke-width="5" opacity=".55"/>
+  <g fill="#583821"><ellipse cx="253" cy="567" rx="20" ry="12" transform="rotate(24 253 567)"/><ellipse cx="296" cy="586" rx="17" ry="11" transform="rotate(-22 296 586)"/><ellipse cx="225" cy="606" rx="16" ry="10" transform="rotate(-8 225 606)"/><ellipse cx="334" cy="552" rx="17" ry="10" transform="rotate(31 334 552)"/></g>
+  <g fill="none" stroke="#bd9364" stroke-width="2"><path d="M246 557c12 6 16 13 14 21M290 578c9 5 12 11 11 17M221 600c9 3 12 8 12 14M329 544c10 5 13 10 12 16"/></g>
+  <path d="M732 405c-9-112 13-168 67-208-7 69 3 119 35 159-30-13-57-1-79 51" fill="#526b43" opacity=".9"/>
+  <path d="M786 398c7-88-8-134-45-176m46 175c-2-75 18-118 58-148" fill="none" stroke="#c4b38d" stroke-width="4" opacity=".8"/>
+  <rect width="900" height="700" fill="#18140f" opacity=".08"/>
+</svg>
