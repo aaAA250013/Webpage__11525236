@@ -104,11 +104,12 @@ img { display: block; max-width: 100%; }
 .story-image figcaption { padding-top: 10px; color: var(--muted); font-size: 11px; }
 .values-section { background: var(--cream); }
 .mobile-break { display: none; }
-.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.value-card { min-height: 220px; padding: 24px 24px 28px; border: 1px solid #d5d5c9; background: rgba(250,248,241,.58); }
-.value-card > span { color: var(--moss); font: 500 9px/1 var(--mono); letter-spacing: .12em; }
-.value-card h3 { margin: 31px 0 9px; font: 700 20px/1.4 var(--serif); }
-.value-card p { margin: 0; color: var(--muted); font-size: 13px; }
+.values-grid, .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.value-card, .team-card { min-height: 220px; padding: 24px 24px 28px; border: 1px solid #d5d5c9; background: rgba(250,248,241,.58); }
+.value-card > span, .team-card > span { color: var(--moss); font: 500 9px/1 var(--mono); letter-spacing: .12em; }
+.value-card h3, .team-card h3 { margin: 31px 0 9px; font: 700 20px/1.4 var(--serif); }
+.value-card p, .team-card p { margin: 0; color: var(--muted); font-size: 13px; }
+.team-section { background: var(--paper); }
 .about-cta { color: white; background: var(--forest); }
 .about-cta-inner { display: flex; min-height: 250px; align-items: center; justify-content: space-between; gap: 30px; padding-block: 45px; }
 .about-cta .eyebrow { margin-bottom: 10px; color: #c4cfaa; }
@@ -176,9 +177,9 @@ img { display: block; max-width: 100%; }
   .quality-item, .quality-item + .quality-item { min-height: 0; padding: 21px 0; border-left: 0; }
   .quality-item h3 { margin: 13px 0 5px; }
   .closing-inner { align-items: flex-start; flex-direction: column; justify-content: center; }
-  .values-grid { grid-template-columns: 1fr; }
-  .value-card { min-height: 0; padding: 21px; }
-  .value-card h3 { margin: 18px 0 7px; }
+  .values-grid, .team-grid { grid-template-columns: 1fr; }
+  .value-card, .team-card { min-height: 0; padding: 21px; }
+  .value-card h3, .team-card h3 { margin: 18px 0 7px; }
   .mobile-break { display: initial; }
   .contact-detail { grid-template-columns: .9fr 1.1fr; min-height: 78px; }
   .contact-bottom-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 25px; }
